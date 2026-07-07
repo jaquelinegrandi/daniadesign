@@ -246,7 +246,7 @@ hr{
 /*HEADER*/
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
@@ -881,7 +881,7 @@ hr{
 /*FOOTER*/
 
 .footer {
-    padding: 5rem 0 2rem;
+    padding: 3rem 0 2rem;
 
     border-top: 1px solid var(--border);
     background: rgba(255,255,255,.45);
@@ -990,13 +990,6 @@ hr{
 .menu-toggle,
 .close-menu {
     display: none;
-
-    border: none;
-    background: none;
-
-    cursor: pointer;
-    font-size: 2rem;
-    color: var(--color-primary);
 }
 
 /*RESPONSIVE*/
@@ -1004,90 +997,113 @@ hr{
 
 /*TABLETS*/
 
-@media (max-width: 992px){
 
-    .menu-toggle{
-        display:block;
-    }
-
-    .navbar-menu{
-        position:fixed;
-
-        top:0;
-        right:-100%;
-
-        width:340px;
-        height:100vh;
-
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-
-        gap:2rem;
-
-        padding:2rem;
-
-        background:var(--paper-soft);
-
-        box-shadow:-10px 0 30px rgba(0,0,0,.08);
-
-        transition:.35s ease;
-
-        z-index:999;
-    }
-
-    .navbar-menu.visible{
-        right:0;
-    }
-
-    .menu-close-item{
-        width:100%;
-        display:flex;
-        justify-content:flex-end;
-    }
-
-    .close-menu{
-        display:block;
-    }
-
-    .navbar-button{
-        width:100%;
-    }
-
-    .navbar-button a{
-        width:100%;
-        justify-content:center;
-    }
-
-}
 
 /*PHONES*/
 
-@media (max-width: 576px){
+@media (max-width: 576px) {
+    .menu-toggle {
+        display: block;
 
-    .navbar{
-        gap:1rem;
+        background: none;
+        border: none;
+
+        color: var(--color-primary);
+
+        font-size: 2rem;
+
+        cursor: pointer;
+
+        z-index: 1100;
+
     }
 
-    .navbar-logo img{
-        width:180px;
+    .menu-toggle.hide {
+        display: none;
+    }
+    
+    .close-menu {
+        display: none;
+
+        background: none;
+        border: none;
+
+        color: var(--color-primary);
+
+        font-size: 2rem;
+        align-self: flex-end;
+
+        margin-bottom: 2rem;
     }
 
-    .menu-toggle{
-        font-size:2rem;
+    .navbar-menu {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: 290px;
+        height: 100vh;
+
+        padding: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        gap: 1.5rem;
+
+        background: var(--paper-soft);
+
+        border-left: 1px solid var(--border);
+
+        box-shadow: -10px 0 35px rgba(0,0,0,.55);
+
+        transform: translateX(100%);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: .4s ease;
+
+        z-index: 1050;
     }
 
-    .navbar-menu{
+    .navbar-menu.visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-menu.visible .close-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-item {
         width:100%;
-        padding:2rem 1.8rem;
     }
 
-    .navbar-item a{
-        font-size:1.1rem;
+    .navbar-item a {
+        width: 100%;
+        padding: .15rem 0;
+
+        font-size: 1rem;
+
+        color: var(--heading);
+
     }
 
-    .navbar-button{
-        margin-top:1rem;
+    .navbar-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .navbar-button a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
 }

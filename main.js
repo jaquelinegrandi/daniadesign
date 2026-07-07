@@ -31,14 +31,19 @@ const openMenu = document.getElementById("open-menu");
 const closeMenu = document.getElementById("close-menu");
 const navMenu = document.getElementById("nav-menu");
 
-openMenu.addEventListener("click", () => {
-    navMenu.classList.add("visible");
-});
+if (openMenu && closeMenu && navMenu) {
 
-closeMenu.addEventListener("click", () => {
-    navMenu.classList.remove("visible");
-});
+    openMenu.addEventListener("click", () => {
+        navMenu.classList.add("visible");
+        openMenu.classList.add("hide");
+    });
 
+    closeMenu.addEventListener("click", () => {
+        navMenu.classList.remove("visible");
+        openMenu.classList.remove("hide");
+    });
+
+}
 /* ===========================
    HEADER ON SCROLL
 =========================== */
