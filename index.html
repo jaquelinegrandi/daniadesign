@@ -7,6 +7,8 @@
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -64,11 +66,14 @@
         </div>
     </section>
 
+    <div class="section-divider">
+        <i class="bi bi-feather"></i>
+    </div>
 
     <section id="about" class="about">
 
         <div class="container">
-                <div>
+                <div class="about-image">
                     <img src="images/dania-about.png" alt="">
                 </div>
         
@@ -104,6 +109,10 @@
         </div>
     </section>
 
+     <div class="section-divider">
+        <i class="bi bi-feather"></i>
+    </div>
+
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="portfolio-header">
@@ -120,28 +129,47 @@
                 </p>
             </div>
 
-            <div class="portfolio-gallery">
-                <article class="portfolio-card">
-                    <img src="images/portfolio-1.png" alt="">
-                </article>
+            <div class="portfolio-slider">
+                <button class="slider-btn-prev">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <div class="portfolio-track">
+    
+                    <article class="portfolio-card">
+                        <img src="images/portfolio-1.png" alt="">
+                        <h3>Lone elk</h3>
+                    </article>
+    
+                    <article class="portfolio-card">
+                        <img src="images/portfolio-2.png" alt="">
+                        <h3>Africa</h3>
+                    </article>
+    
+                    <article class="portfolio-card">
+                        <img src="images/portfolio-3.png" alt="">
+                        <h3>Through the storm</h3>
+                    </article>
+    
+                    <article class="portfolio-card">
+                        <img src="images/portfolio-4.png" alt="">
+                        <h3>Freedom</h3>
+                    </article>
+                </div>
 
-                <article class="portfolio-card">
-                    <img src="images/portfolio-2.png" alt="">
-                </article>
-
-                <article class="portfolio-card">
-                    <img src="images/portfolio-3.png" alt="">
-                </article>
-
-                <article class="portfolio-card">
-                    <img src="images/portfolio-4.png" alt="">
-                </article>
+                    <button class="slider-btn-next">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
             </div>
-            <div class="portfolio-button">
+
+            <div class="btn-primary">
                 <a href="#">View Full Portfolio</a>
             </div>
         </div>
     </section>
+
+    <div class="section-divider">
+        <i class="bi bi-feather"></i>
+    </div>
 
     <section id="commissions" class="commissions">
         <div class="container">
@@ -162,11 +190,32 @@
 
                 <a href="#" class="btn-primary">Start Your Commission</a>
             </div>
+
+            <div class="commissions-image"></div>
         </div>
     </section>
 
+    <div class="section-divider">
+        <i class="bi bi-feather"></i>
+    </div>
+    
     <section id="contact" class="contact">
         <div class="container">
+
+            <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <h3>Let's Start Your Story</h3>
+                        <form action="send.php" method="POST">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="tel" name="phone" placeholder="Your Phone" optional>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Tell me your painting idea, the subject you'd like, or any questions you may have.'" rows="5" required>
+                            </textarea>
+                            <button type="submit" class="btn-primary">Send Message</button>
+                        </form>
+                    </div>
+            </div>
+
             <div class="contact-content">
                 <span class="section-subtitle">
                     Get in Touch
@@ -195,13 +244,11 @@
                             </div>
                         </div>
             </div>
-
-            <div class="btn-primary">
-                <a href="mailto:daniadesignsstudio@gmail.com">Send Message</a>
-            </div>
         </div>
     </section>
+
 </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -221,5 +268,7 @@
             <p>©2026 Dania Designs Art Studio. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
-</html>>
+</html>
