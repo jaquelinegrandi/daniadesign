@@ -27,8 +27,17 @@ prevBtn.addEventListener("click", () => {
    MOBILE MENU
 =========================== */
 
-// Aquí irá el menú responsive
+const openMenu = document.getElementById("open-menu");
+const closeMenu = document.getElementById("close-menu");
+const navMenu = document.getElementById("nav-menu");
 
+openMenu.addEventListener("click", () => {
+    navMenu.classList.add("visible");
+});
+
+closeMenu.addEventListener("click", () => {
+    navMenu.classList.remove("visible");
+});
 
 /* ===========================
    HEADER ON SCROLL
